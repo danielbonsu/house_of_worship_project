@@ -8,7 +8,7 @@ import {
 } from 'react-native';
 
 import React from 'react';
-
+import CustomBanner from '../Custom Components/CustomBanner';
 const zoomData = {
   id: '856 7259 9183',
   passcode: '654321',

@@ -19,6 +19,7 @@ import ForgotPassword from './components/Screens/ForgotPasswordScreen';
 
 import { Provider } from 'react-redux';
 import store from './store';
+import PrayerScreen from './components/Screens/PrayerScreen';
 
 const App = () => {
   return (
@@ -55,6 +56,11 @@ const App = () => {
           <Stack.Screen
             name='Podcast'
             component={PodcastScreen}
+          ></Stack.Screen>
+
+          <Stack.Screen
+            name='Prayer'
+            component={PrayerScreen}
           ></Stack.Screen>
         </Stack.Navigator>
       </NavigationContainer>

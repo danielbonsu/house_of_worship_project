@@ -8,15 +8,15 @@ export const UpcomingEvents = [
   {
     eventTitle:
       "Virtual Children's Church- Elementary School",
-    eventDate: 'Oct 31, 2020',
-    eventTime: '  2:00 PM => 3:00 PM ',
+    eventDate: 'Oct 31, 2020 2:00 PM to 3:00 PM ',
+    eventTime: '  2:00 PM to 3:00 PM ',
     zoom: true,
   },
 
   {
     eventTitle: "Virtual Children's Church- Middle School",
-    eventDate: 'Oct 31, 2020',
-    eventTime: '3:15 PM => 4:15 PM ',
+    eventDate: 'Oct 31, 2020  3:15 PM to 4:15 PM ',
+    eventTime: '3:15 PM to 4:15 PM ',
     zoom: true,
   },
 
@@ -29,7 +29,7 @@ export const UpcomingEvents = [
   {
     eventTitle: '3 Day Churchwide Fast',
     eventDate:
-      'Monday, November 2, 2020 12:00 AM to Wednesday, November 4, 2020 12:00 AM ',
+      'November 2, 2020 12:00 AM to November 4, 2020 12:00 AM ',
     eventTime: '',
   },
 ];

@@ -91,7 +91,10 @@ const Footer = ({
               <Text style={styles.footerText}>Donate</Text>
             </View>
           </TouchableOpacity>
-          <TouchableOpacity style={styles.footerIcon}>
+          <TouchableOpacity
+            style={styles.footerIcon}
+            onPress={() => navigation.navigate('Prayer')}
+          >
             <View>
               <FontAwesomeIcon
                 color={'#fff'}
