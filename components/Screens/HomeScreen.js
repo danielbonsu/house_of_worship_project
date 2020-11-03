@@ -15,6 +15,8 @@ const setDamnModalVisible = (boolshit) => {
   });
 };
 
+import UpcomingEvent from '../Events&Calenders/UpcomingEventsContainer';
+
 import {
   View,
   Text,
@@ -27,7 +29,9 @@ import {
   Modal,
   TouchableHighlight,
 } from 'react-native';
-
+import { UpcomingEvents } from '../Events&Calenders/UpcomingEventData';
+import UpcomingEventContainer from '../Events&Calenders/UpcomingEventsContainer';
+import UpcomingEventsContainer from '../Events&Calenders/UpcomingEventsContainer';
 const HomeScreen = ({ navigation }) => {
   const [isModalVisible, setModalVisible] = useState({
     showModel: false,
@@ -41,6 +45,8 @@ const HomeScreen = ({ navigation }) => {
       </View>
       <ScrollView style={styles.mainContainer}>
         <Showcase />
+
+        <UpcomingEventsContainer />
 
         <MainSection navigation={navigation} />
       </ScrollView>

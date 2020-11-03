@@ -88,6 +88,9 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     borderRadius: 200,
     opacity: 0.6,
+    shadowColor: '#fff',
+    shadowOpacity: 0.6,
+    shadowOffset: { width: 0, height: 0 },
   },
 
   bibleVerseContainerInner: {

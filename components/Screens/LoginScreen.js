@@ -51,7 +51,7 @@ const LoginScreen = ({ navigation }) => {
     // validate  email
     const emailRegex = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
     const emailTest = emailRegex.test(data.Email);
-
+    navigation.replace('Home');
     if (!emailTest) {
       setValidateEmail({
         ...validateEmail,
@@ -60,7 +60,6 @@ const LoginScreen = ({ navigation }) => {
       });
       console.log(validateEmail);
     } else {
-      navigation.replace('Home');
     }
   };
 

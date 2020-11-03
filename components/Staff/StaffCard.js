@@ -8,6 +8,7 @@ import {
   TouchableOpacity,
   TouchableNativeFeedback,
   ImageBackground,
+  Image,
 } from 'react-native';
 
 const StaffContainer = ({
@@ -25,10 +26,18 @@ const StaffContainer = ({
           })
         }
       >
-        <ImageBackground
-          source={image}
-          style={styles.card}
-        ></ImageBackground>
+        <View style={styles.card}>
+          <Image source={image} style={styles.img}></Image>
+          <View style={styles.pastorDetails}>
+            <Text style={styles.text}>{name}</Text>
+
+            <View style={styles.pastorPreviewBTN}>
+              <Text style={styles.pastorPreviewBTNText}>
+                View Info
+              </Text>
+            </View>
+          </View>
+        </View>
       </TouchableNativeFeedback>
     </View>
   );
@@ -36,15 +45,23 @@ const StaffContainer = ({
 
 const styles = StyleSheet.create({
   card: {
-    padding: 10,
-    margin: 1,
-    // backgroundColor: '#444',
-    width: 160,
-    height: 170,
+    // padding: 10,
+    margin: 3,
+    backgroundColor: '#202020',
+    width: 140,
+    // height: 590,
     flex: 1,
     flexDirection: 'column',
-    justifyContent: 'flex-end',
-    borderRadius: 20000,
+    justifyContent: 'flex-start',
+    alignItems: 'center',
+    borderRadius: 10,
+    overflow: 'hidden',
+  },
+
+  img: {
+    // margin: 5,
+    width: '100%',
+    height: '60%',
   },
 
   banner: {
@@ -53,12 +70,33 @@ const styles = StyleSheet.create({
     backgroundColor: '#333',
   },
 
+  pastorDetails: {
+    flex: 1,
+    flexDirection: 'column',
+    justifyContent: 'space-between',
+    alignItems: 'center',
+    paddingVertical: 6,
+  },
+  pastorPreviewBTN: {
+    backgroundColor: '#1a237e',
+    padding: 9,
+    flexDirection: 'column',
+    justifyContent: 'center',
+    alignItems: 'center',
+    borderRadius: 10,
+    marginBottom: 10,
+    width: 130,
+  },
+
+  pastorPreviewBTNText: {
+    color: '#9fa8da',
+    textAlign: 'center',
+  },
+
   imgContainer: {
     flex: 1,
 
-    borderWidth: 1,
-    // borderColor: '#f1f1f1',
-    height: 170,
+    height: 275,
   },
 
   memberName: {
@@ -69,13 +107,6 @@ const styles = StyleSheet.create({
 
   nameBanner: {
     width: '100%',
-    backgroundColor: '#000',
-    color: '#fff',
-    fontWeight: 'bold',
-    padding: 10,
-    borderColor: '#fff',
-    borderWidth: 1,
-    borderRadius: 10,
   },
 
   text: {

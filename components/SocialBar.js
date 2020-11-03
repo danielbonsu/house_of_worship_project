@@ -20,7 +20,7 @@ export default SocialBar;
 
 const styles = StyleSheet.create({
   outterContainer: {
-    backgroundColor: '#0d47a1',
+    backgroundColor: '#111',
     // borderWidth: 1,
     // borderColor: '#777',
     padding: 20,

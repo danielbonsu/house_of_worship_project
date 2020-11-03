@@ -91,7 +91,7 @@ const styles = StyleSheet.create({
     flex: 1,
     justifyContent: 'flex-start',
     alignItems: 'center',
-    // padding: 10,
+    backgroundColor: '#1a237e',
   },
   card: {
     backgroundColor: '#fff',
@@ -107,7 +107,7 @@ const styles = StyleSheet.create({
   },
 
   outterimgContainer: {
-    width: '65%',
+    width: '55%',
     height: '40%',
     borderRadius: 200,
     backgroundColor: '#f8f8f8',

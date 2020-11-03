@@ -12,18 +12,18 @@ const StaffContainer = () => {
     {
       label: 'singers',
       image: require('../../images/groupPic1.jpg'),
-      name: 'Pastor Fiifi Pentsil',
+      name: '',
     },
-    {
-      label: 'singers',
-      image: require('../../images/ourPastors2.jpg'),
-      name: 'Pastor Fiifi Pentsil',
-    },
-    {
-      label: 'singers',
-      image: require('../../images/ourPastors3.jpg'),
-      name: 'Pastor Fiifi Pentsil',
-    },
+    // {
+    //   label: 'singers',
+    //   image: require('../../images/ourPastors2.jpg'),
+    //   name: 'Pastor Fiifi Pentsil',
+    // },
+    // {
+    //   label: 'singers',
+    //   image: require('../../images/ourPastors3.jpg'),
+    //   name: 'Pastor Fiifi Pentsil',
+    // },
   ];
   return (
     <ScrollView
