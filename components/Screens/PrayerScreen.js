@@ -6,9 +6,11 @@ import {
   Image,
   KeyboardAvoidingView,
   Platform,
+  Button,
 } from 'react-native';
 
 import React from 'react';
+import email from 'react-native-email';
 
 import { useForm, Controller } from 'react-hook-form';
 
@@ -21,7 +23,14 @@ import {
 } from 'react-native-gesture-handler';
 
 const PrayerScreen = () => {
-  const onChange = {};
+  const onSubmit = (data) => {
+    const to = ['freshcua@yahoo.com'];
+
+    email(to, {
+      subject: 'testing email for house of worship',
+      body: data,
+    }).catch(console.error);
+  };
   const {
     control,
     register,
@@ -39,25 +48,6 @@ const PrayerScreen = () => {
         }
       >
         <ScrollView>
-          <View style={styles.prayerAnnouncementCard}>
-            <Text style={styles.announcementText}>
-              Fasting for PEACE IN THE LAND Sunday November
-              1st 6pm to Wednesday November 4th 6pm Fast
-              from 6pm to 6am or 6am to 6pm
-            </Text>
-          </View>
-
-          <View style={styles.prayerAnnouncementCard}>
-            <Text style={styles.announcementText}>
-              <View>
-                <Text>PRAY WITH US!</Text>
-              </View>
-              <Text>
-                Everyday for 15 minutes at 12AM, 3AM, 6AM,
-                9AM 12PM, 3PM, 6PM, 9AM
-              </Text>
-            </Text>
-          </View>
           <CustomBanner>
             <Text style={styles.customBannerText}>
               Call: (206) 402-0821 — Pin: 8464088#
@@ -70,25 +60,24 @@ const PrayerScreen = () => {
                 PRAYER REQUESTS
               </Text>
 
-              <View style={styles.name}>
-                <Controller
-                  rules={{ required: true }}
-                  control={control}
-                  render={({ onChange, value, onBlur }) => (
-                    <TextInput
-                      placeholder='First Name'
-                      onChangeText={(value) =>
-                        onChange(value)
-                      }
-                      value={value}
-                      onBlur={onBlur}
-                      style={styles.requestInput}
-                    />
-                  )}
-                  name='Email'
-                  defaultValue=''
-                />
-              </View>
+              <Controller
+                rules={{ required: true }}
+                control={control}
+                render={({ onChange, value, onBlur }) => (
+                  <TextInput
+                    placeholder='First Name'
+                    onChangeText={(value) =>
+                      onChange(value)
+                    }
+                    value={value}
+                    onBlur={onBlur}
+                    style={styles.requestInput}
+                  />
+                )}
+                name='firstName'
+                defaultValue=''
+              />
+
               <Controller
                 rules={{ required: true }}
                 control={control}
@@ -103,7 +92,7 @@ const PrayerScreen = () => {
                     style={styles.requestInput}
                   />
                 )}
-                name='Email'
+                name='lastName'
                 defaultValue=''
               />
 
@@ -152,21 +141,22 @@ const PrayerScreen = () => {
                     onChangeText={(value) =>
                       onChange(value)
                     }
+                    onBlur={onBlur}
                     value={value}
                     multiline={true}
                     numberOfLines={4}
                     style={styles.message}
                   />
                 )}
-                name='Phone'
+                name='message'
                 defaultValue=''
               />
 
-              <TouchableOpacity style={styles.submitBTN}>
-                <Text style={styles.submitText}>
-                  Send Request
-                </Text>
-              </TouchableOpacity>
+              <Button
+                onPress={handleSubmit(onSubmit)}
+                title='Send Request'
+                style={styles.submitBTN}
+              />
             </View>
           </View>
         </ScrollView>
@@ -223,7 +213,7 @@ const styles = StyleSheet.create({
     minWidth: '100%',
     maxWidth: '100%',
 
-    height: 200,
+    height: 100,
     padding: 10,
   },
   name: {

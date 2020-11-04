@@ -58,7 +58,7 @@ const LoginScreen = ({ navigation }) => {
         showAlert: true,
         message: 'email is not in the right format',
       });
-      console.log(validateEmail);
+      console.log(data);
     } else {
     }
   };

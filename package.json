@@ -34,6 +34,7 @@
     "react-hook-form": "^6.9.5",
     "react-native": "https://github.com/expo/react-native/archive/sdk-38.0.2.tar.gz",
     "react-native-easy-grid": "^0.2.2",
+    "react-native-email": "^1.1.0",
     "react-native-fontawesome": "^7.0.0",
     "react-native-gesture-handler": "~1.6.0",
     "react-native-ionicons": "^4.6.5",

@@ -1,4 +1,8 @@
-import React, { useState, Fragment } from 'react';
+import React, {
+  useState,
+  Fragment,
+  useEffect,
+} from 'react';
 import { moduleName } from 'react-native';
 
 import BurgerMenuIcon from '../HamburgerMenu';
@@ -32,14 +36,26 @@ import {
 import { UpcomingEvents } from '../Events&Calenders/UpcomingEventData';
 import UpcomingEventContainer from '../Events&Calenders/UpcomingEventsContainer';
 import UpcomingEventsContainer from '../Events&Calenders/UpcomingEventsContainer';
+import AnnouncementCard from '../AnnouncementCard';
 const HomeScreen = ({ navigation }) => {
   const [isModalVisible, setModalVisible] = useState({
     showModel: false,
     modalForContact: false,
   });
 
+  const [showAnnouncement, setShowAnnouncement] = useState(
+    true
+  );
+
+  useEffect(() => {
+    setTimeout(() => {
+      setShowAnnouncement(false);
+    }, 9000);
+  }, [showAnnouncement]);
   return (
     <Fragment>
+      {showAnnouncement && <AnnouncementCard />}
+
       <View>
         <MainNav />
       </View>
